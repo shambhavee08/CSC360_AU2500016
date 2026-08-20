@@ -1,0 +1,42 @@
+package com.mycompany.app;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.SwingUtilities;
+import java.awt.Graphics;
+import java.awt.Color;
+import java.awt.Dimension;
+
+public class Main {
+
+    // 1. Create a custom panel where the square will be drawn
+    static class SquarePanel extends JPanel {
+        public SquarePanel() {
+            setBackground(Color.WHITE); // White canvas background
+            setPreferredSize(new Dimension(400, 400)); // Window dimension
+        }
+
+        @Override
+        protected void paintComponent(Graphics g) {
+            super.paintComponent(g);
+            
+            g.setColor(Color.RED); // Set the square color to red
+            
+            // Draw a solid square: fillRect(X-coordinate, Y-coordinate, width, height)
+            g.fillRect(100, 100, 200, 200); 
+        }
+    }
+
+    // 2. Launch the desktop window interface
+    public static void main(String[] args) {
+        SwingUtilities.invokeLater(() -> {
+            JFrame frame = new JFrame("Simple Square App");
+            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            
+            frame.add(new SquarePanel()); // Add the drawing panel to the window
+            frame.pack();                 // Size window to fit the panel dimensions
+            frame.setLocationRelativeTo(null); // Center window on your monitor screen
+            frame.setVisible(true);       // Make window visible
+        });
+    }
+}
