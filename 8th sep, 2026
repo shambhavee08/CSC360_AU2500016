@@ -1,0 +1,13 @@
+The discussion about event handlers helped me understand how JavaFX responds to user actions. The event source generates the event, while the handler decides what should happen, making it easier to separate the interface layout from its behaviour.
+
+The collections discussion showed me that different data structures suit different problems. Lists maintain order, queues manage waiting tasks, sets store unique values, and maps allow key-based lookup. This was useful in the progress-bar exercise for tracking different jobs.
+
+I also understood the difference between `GridPane` and `BorderPane`. `GridPane` is useful for arranging controls in rows and columns, while `BorderPane` divides an application into larger sections such as a toolbar, navigation area, and main content.
+
+The composite progress-bar program brought these ideas together by running jobs in the background and displaying both individual and overall progress. Cancellation also needs to be handled carefully so that the application remains responsive.
+
+The Swing and JavaFX exercise showed that both toolkits have different threading models, so their UI components must be updated on the correct UI threads. The master-detail and geometric-object exercises further demonstrated how events can control other components and properties.
+
+The browser exercise showed how JavaFX can display web content and communicate with JavaScript through the page's DOM.
+
+Overall, the class helped me understand how event handling, collections, layouts, background tasks, and property binding work together to create responsive and interactive interfaces.
